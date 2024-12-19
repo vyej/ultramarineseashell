@@ -1,48 +1,48 @@
-# Setup
-title: 非...白
-url: https://vyej.github.io/ultramarineseashell
-paginate: 1
-baseurl: ""
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title:       非...βαι 
+email:       ''
+description: ''
+baseurl:     '/ultramarineseashell' # The subpath of your site, e.g. /blog
+url:         'https://vyej.github.io/ultramarineseashell/' # The base hostname & protocol for your site
+twitter:     ''
+github:      ''
+instagram:   ''
+facebook:    ''
+
+markdown:  kramdown
 permalink: pretty
-
-# Gems
-plugins:
-  - jekyll-gist
-  - jekyll-paginate
-  - jekyll-seo-tag
-
-# Optimize Jekyll
-exclude:
-  - .editorconfig
-  - .git
-  - .jekyll-cache
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE.md
-  - README.md
+paginate:  10
 
 sass:
-  sass_dir: _sass
-  style: :compressed
+  style: compressed
 
-# Options
+plugins:
+  - jekyll-paginate
+  - jekyll/tagging
 
-# Replace this value and uncomment to enable Google Analytics tracking
-# ga_analytics: UA-000000-0
+include:
+  - _pages
 
-# Specify the author for blog posts
-author:
-  name: vy
-  url: 
-  email: 
+exclude:
+  - vendor
+  - Gemfile
+  - Gemfile.lock
 
-# Custom vars
-version: 3.0.0
+# Tags
+tag_page_dir:         tag
+tag_page_layout:      tag_page
+tag_permalink_style:  pretty
 
-# Navbar page list
-nav:
-  - title: Blog
-    url: /archive
-
-  - title: About
-    url: /about
+# Pages path
+defaults:
+  - scope:
+      path: '_pages'
+    values:
+      permalink: /:basename:output_ext
