@@ -2,38 +2,36 @@
 layout: default
 ---
 
-{% include base_path %}
+<header class="post-header">
+	<div>
+		<span>Posted on </span><span class="post-meta">{{ page.date | date: "%B %-d, %Y" }}</span>
+	</div>
 
-{% if page.image %}
-  <meta itemprop='og:image' content='{{ base_path }}{{ page.image }}'>
-{% endif %}
+	<h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+</header>
 
-<div class='o-wrapper'>
-  <div class='o-grid'>
-    <div class='o-grid__col'>
-      <article class='c-post' itemscope itemtype='http://schema.org/BlogPosting'>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="entry-content" itemprop="articleBody">
+		{{ content }}
+	</div>
+</article>
 
-        <h1 class='c-post__title u-text-center'>{{ page.title }}</h1>
+<div id="post-nav">
+	<div class="next">
+		{% if page.next.url %}
+		<a href="{{ site.baseurl }}{{ page.next.url }}">
+			<span>Next entry</span>
+			{{ page.next.title }}
+		</a>
+		{% endif %}
+	</div>
 
-        <time class='c-post__date' datetime='{{ page.date | date_to_xmlschema }}' itemprop='datePublished'>{{ page.date | date: '%d %b %Y' }}</time>
-
-        <div class='c-content' itemprop='articleBody'>
-          {% include page-image.html %}
-
-          {{ content }}
-        </div>
-
-        <div class='c-tags'>
-          {% for tag in page.tags %}
-            <a href='{{ site.baseurl }}/tag/{{ tag }}'>{{ tag }}</a>
-          {% endfor %}
-        </div>
-
-        <hr>
-
-        {% include disqus.html %}
-
-      </article>
-    </div>
-  </div>
+	<div class="previous">
+		{% if page.previous.url %}
+		<a href="{{ site.baseurl }}{{ page.previous.url }}">
+			<span>Previous entry</span>
+			{{ page.previous.title }}
+		</a>
+		{% endif %}
+	</div>
 </div>
