@@ -25,3 +25,8 @@ twitter_username:
 
 # Build settings
 markdown: kramdown
+
+plugins:
+  - jekyll-paginate
+
+paginate: 3
