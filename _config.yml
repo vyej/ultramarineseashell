@@ -5,7 +5,7 @@
 # in the templates via {{ site.myvariable }}.
 title: Stands or Falls
 email:
-description: > 記住更美好而不是更丑惡的事，這無疑是高貴的，也更正義，更虔敬，更令人愉快。 --色諾芬《遠征記·卷五》 
+description:  記住更美好而不是更丑惡的事，這無疑是高貴的，也更正義，更虔敬，更令人愉快。 --色諾芬《遠征記·卷五》 
 baseurl: "/ultramarineseashell" # the subpath of your site, e.g. /blog
 url: "https://vyej.github.io" # the base hostname & protocol for your site
 github_username:
